@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">InstantGarbageDIsposal</string>
+    <string name="post_an_issue">Post an issue</string>
+    <string name="InstantGarbageDisposal" />
+    <string-array name="garbage_type">
+        <item>Human waste</item>
+        <item>Organic waste</item>
+        <item>Inorganic waste</item>
+        <item>Recyclable waste</item>
+    </string-array>
+</resources>
