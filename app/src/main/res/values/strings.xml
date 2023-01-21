@@ -7,5 +7,7 @@
         <item>Organic waste</item>
         <item>Inorganic waste</item>
         <item>Recyclable waste</item>
+        <item>Dry waste</item>
+        <item>Wet waste</item>
     </string-array>
 </resources>
