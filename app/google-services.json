@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1014577373126",
+    "project_id": "cleancity-f1cc7",
+    "storage_bucket": "cleancity-f1cc7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1014577373126:android:7b7cf8f1a22bd7492adcc7",
+        "android_client_info": {
+          "package_name": "com.example.instantgarbagedisposal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1014577373126-jepc7holajrse278ag864oh6aa754hvi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.instantgarbagedisposal",
+            "certificate_hash": "5830ce5ce3ef2e5a6b19449a664b82431f3e742d"
+          }
+        },
+        {
+          "client_id": "1014577373126-ttln5u11s616c0pqdakm2rsk1redvqfo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDof2becJe3XVf9r1klD3tXDfPx5xWvBd8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1014577373126-ttln5u11s616c0pqdakm2rsk1redvqfo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
