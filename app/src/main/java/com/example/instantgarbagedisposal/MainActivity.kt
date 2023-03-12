@@ -1,14 +1,11 @@
 package com.example.instantgarbagedisposal
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import androidx.fragment.app.Fragment
 import com.example.instantgarbagedisposal.fragments.PostIssue_Fragment
 import com.example.instantgarbagedisposal.fragments.SettingsFragment
-import com.example.instantgarbagedisposal.fragments.home_Fragment
+import com.example.instantgarbagedisposal.fragments.HomeFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import java.util.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -24,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 //        val issueButton : Button = findViewById(R.id.issueButton)
-        val homeFragment = home_Fragment()
+        val homeFragment = HomeFragment()
         val postissueFragment = PostIssue_Fragment()
         val settingsFragment = SettingsFragment()
 

@@ -13,21 +13,22 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:src="@drawable/img"
-        />
+        android:contentDescription="TODO"
+        tools:ignore="ContentDescription,HardcodedText" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/montserrat_bold"
-        android:textColor="@color/material_dynamic_primary80"
         android:text="Hello There, Welcome Back"
-        android:textSize="40sp" />
+        android:textColor="#FF76D1FF"
+        android:textSize="40sp"
+        tools:ignore="HardcodedText,TextContrastCheck" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Please Sign In To Continue"
         android:textSize="15sp"
-        android:fontFamily="@font/montserrat"/>
+        tools:ignore="HardcodedText" />
 
 <LinearLayout
         android:layout_width="match_parent"
@@ -38,10 +39,12 @@
             android:layout_height="wrap_content"
             android:id="@+id/username"
             style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Enter Your Name"/>
+                android:hint="Enter Your Name"
+                tools:ignore="HardcodedText,TextContrastCheck,VisualLintTextFieldSize" />
 
 
 
@@ -62,10 +65,12 @@
             android:layout_height="wrap_content"
             android:id="@+id/Password"
             style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Enter Your Password"/>
+                android:hint="Enter Your Password"
+                tools:ignore="HardcodedText,TextContrastCheck,VisualLintTextFieldSize" />
 
 
 
@@ -82,8 +87,7 @@
         android:id="@+id/btnSignInGoogle"
         android:layout_width="326dp"
         android:layout_height="72dp"
-        android:drawableLeft="@drawable/common_google_signin_btn_icon_light_focused"
-        android:fontFamily="@font/montserrat"
+        android:drawableStart="@drawable/common_google_signin_btn_icon_light_focused"
         android:text="Sign In With Google"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -92,7 +96,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.864"
-        tools:ignore="HardcodedText" />
+        tools:ignore="HardcodedText,VisualLintButtonSize" />
 
 </LinearLayout>
 

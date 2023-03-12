@@ -15,6 +15,7 @@
         <item name="windowActionBar">false</item>
         <!-- Customize your theme here. -->
     </style>
+
     <style name="Theme.splashScreen" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
@@ -30,4 +31,13 @@
         <item name="windowActionBar">false</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="Theme.InstantGarbageDIsposal.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.InstantGarbageDIsposal.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.InstantGarbageDIsposal.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

@@ -3,26 +3,40 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/white"
     android:layout_height="match_parent"
-    tools:context=".fragments.home_Fragment">
+    android:background="@color/white"
+    tools:context=".fragments.HomeFragment">
 
-
-    <TextView
-        android:id="@+id/textv1"
-        android:layout_width="273dp"
-        android:layout_height="108dp"
-
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:layout_marginTop="16dp"
-        android:alpha="10"
-        android:fontFamily="cursive"
-        android:text="Swachha Bharat"
-        android:textAlignment="center"
-        android:textSize="40dp"
+    <Button
+        android:id="@+id/ongoing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ONGOING EVENTS"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/upcoming"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="UPCOMING EVENTS"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ongoing" />
+
+    <Button
+        android:id="@+id/creationCleaning"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="CREATE A CLEANING DRIVE"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/upcoming" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

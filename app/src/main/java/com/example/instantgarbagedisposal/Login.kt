@@ -56,7 +56,7 @@ class Login : AppCompatActivity() {
 
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
+        //super.onActivityResult(requestCode, resultCode, data)
 
         // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
         if (requestCode == RC_SIGN_IN) {
@@ -92,7 +92,8 @@ class Login : AppCompatActivity() {
 
     private fun updateUI(user: FirebaseUser?) {
         Toast.makeText(applicationContext,"Logon Sucessful",Toast.LENGTH_SHORT).show()
-        FirebaseDatabase.get
+        FirebaseDatabase.getInstance()
+
         if (user != null) {
             val intent = Intent(applicationContext, MainActivity::class.java)
             intent.putExtra(EXTRA_NAME, user.displayName)

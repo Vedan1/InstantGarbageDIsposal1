@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "1014577373126",
+    "firebase_url": "https://cleancity-f1cc7-default-rtdb.firebaseio.com",
     "project_id": "cleancity-f1cc7",
     "storage_bucket": "cleancity-f1cc7.appspot.com"
   },
@@ -22,7 +23,7 @@
           }
         },
         {
-          "client_id": "1014577373126-ttln5u11s616c0pqdakm2rsk1redvqfo.apps.googleusercontent.com",
+          "client_id": "1014577373126-sah0blu9khk56j7r4ha8tqa0ainermkq.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
@@ -35,7 +36,7 @@
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1014577373126-ttln5u11s616c0pqdakm2rsk1redvqfo.apps.googleusercontent.com",
+              "client_id": "1014577373126-sah0blu9khk56j7r4ha8tqa0ainermkq.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
