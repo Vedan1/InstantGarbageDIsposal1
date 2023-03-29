@@ -36,6 +36,9 @@ class Login : AppCompatActivity() {
     private lateinit var password: TextInputLayout
     private lateinit var loginBtn: Button
 
+    private lateinit var dummyButton: Button
+
+//    private var currentUser = auth.currentUser
 
     private fun signIn() {
         val signInIntent = googleSignInClient.signInIntent
@@ -61,6 +64,13 @@ class Login : AppCompatActivity() {
 
         binding.btnSignInGoogle.setOnClickListener() {
             signIn()
+        }
+
+        dummyButton = findViewById(R.id.dummyButton)
+        dummyButton.setOnClickListener {
+            val intent: Intent = Intent(this,WorkerActivity::class.java)
+            startActivity(intent)
+            finish()
         }
 
         loginBtn.setOnClickListener {
@@ -128,12 +138,22 @@ class Login : AppCompatActivity() {
         val credential = GoogleAuthProvider.getCredential(idToken, null)
         auth.signInWithCredential(credential)
             .addOnCompleteListener(this) { task ->
-                        if (task.isSuccessful) {
+
+
+
+                        if(auth.currentUser!!.email!!.contains("palashwalali25@gmail.com")){
+                                Log.d("ERror1", "Error in the login ")
+                                val intent: Intent = Intent(this,AdminActivity::class.java)
+                                startActivity(intent)
+
+                        }
+                        else if (task.isSuccessful) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(ContentValues.TAG, "signInWithCredential:success")
                             val user = auth.currentUser
                             updateUI(user)
-                        } else {
+                        }
+                        else {
                             // If sign in fails, display a message to the user.
                             Log.w(ContentValues.TAG, "signInWithCredential:failure", task.exception)
                     updateUI(null)
