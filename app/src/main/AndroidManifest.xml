@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.instantgarbagedisposal">
+    package="com.example.instantgarbagedisposal" >
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
@@ -16,7 +16,10 @@
         android:label="Instant Garbage Disposal"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.InstantGarbageDIsposal">
+        android:theme="@style/Theme.InstantGarbageDIsposal" >
+        <activity
+            android:name=".AdminActivity"
+            android:exported="false" />
         <activity
             android:name=".CreateEventActivity"
             android:exported="false"
@@ -42,7 +45,7 @@
         <activity
             android:name=".splash"
             android:exported="true"
-            android:theme="@style/Theme.splashScreen">
+            android:theme="@style/Theme.splashScreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

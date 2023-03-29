@@ -37,13 +37,14 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/username"
+            android:id="@+id/Email"
             style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:inputType="textEmailAddress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Enter Your Name"
+                android:hint="Enter Your Email"
                 tools:ignore="HardcodedText,TextContrastCheck,VisualLintTextFieldSize" />
 
 
@@ -67,6 +68,7 @@
             style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:inputType="textPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Enter Your Password"
@@ -83,22 +85,34 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="20dp">
-    <Button
-        android:id="@+id/btnSignInGoogle"
-        android:layout_width="326dp"
-        android:layout_height="72dp"
-        android:drawableStart="@drawable/common_google_signin_btn_icon_light_focused"
-        android:text="Sign In With Google"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.864"
-        tools:ignore="HardcodedText,VisualLintButtonSize" />
 
-</LinearLayout>
+        <Button
+            android:id="@+id/LoginButton"
+            style="@android:style/Widget.Material.Light.Button"
+            android:layout_width="250dp"
+            android:layout_height="72dp"
+            android:background="#404040"
+            android:drawableStart="@drawable/common_google_signin_btn_icon_light_focused"
+            android:text="LOGIN"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.864"
+            tools:ignore="HardcodedText,VisualLintButtonSize" />
+
+        <Button
+            android:id="@+id/btnSignInGoogle"
+            android:layout_width="wrap_content"
+            android:layout_height="75dp"
+            android:layout_weight="1"
+            android:text="GOOGLE"
+            android:textSize="8dp"
+            tools:ignore="TextSizeCheck" />
+
+    </LinearLayout>
 
 
 
