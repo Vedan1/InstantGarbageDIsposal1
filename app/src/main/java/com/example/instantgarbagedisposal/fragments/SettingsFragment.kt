@@ -56,7 +56,7 @@ class SettingsFragment : Fragment() {
 //        val v = inflater.inflate(R.layout.fragment_post_issue_, container, false)
         val btn = view.findViewById<Button>(R.id.workerbtn)
         val btn1 = view.findViewById<Button>(R.id.supervisorbtn)
-//        val photoUrl = user?.photoUrl
+      //  val photoUrl = user?.photoUrl
 
 
         // Inflate the layout for this fragment
@@ -82,6 +82,9 @@ class SettingsFragment : Fragment() {
 
 //        val IssueActivity = activity.Issue
         //       val issueButton : Button = view?.findViewById(R.id.issueButton)!!
+
+
+
         btn.setOnClickListener {
 
             val intent = Intent(requireActivity(), Login::class.java)

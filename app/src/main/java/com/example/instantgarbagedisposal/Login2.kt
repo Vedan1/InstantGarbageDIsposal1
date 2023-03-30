@@ -51,7 +51,7 @@ class Login2 : AppCompatActivity() {
         setContentView(binding.root)
 
         auth = Firebase.auth
-        loginBtn = findViewById(R.id.LoginButton)
+        //loginBtn = findViewById(R.id.LoginButton)
 
         // Configure Google Sign In
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -73,11 +73,11 @@ class Login2 : AppCompatActivity() {
             finish()
         }*/
 
-        loginBtn.setOnClickListener {
-            email = findViewById(R.id.Email)
-            password = findViewById(R.id.Password)
-            signInUsingEmailAndPass(email.editText.toString(), password.editText.toString())
-        }
+//        loginBtn.setOnClickListener {
+//            email = findViewById(R.id.Email)
+//            password = findViewById(R.id.Password)
+//            signInUsingEmailAndPass(email.editText.toString(), password.editText.toString())
+//        }
     }
 
     private fun signInUsingEmailAndPass(email: String, password: String) {
@@ -139,7 +139,11 @@ class Login2 : AppCompatActivity() {
         val credential = GoogleAuthProvider.getCredential(idToken, null)
         auth.signInWithCredential(credential)
             .addOnCompleteListener(this) { task ->
+                auth = FirebaseAuth.getInstance()
 
+                val currentUser = auth.currentUser
+
+                if(currentUser!!.email!!.contains("@mes.ac.in") || currentUser.email!!.contains("@student.mes.ac.in") ) {
 
 
                 if(auth.currentUser!!.email!!.contains("palashwalali25@gmail.com")){
@@ -158,6 +162,7 @@ class Login2 : AppCompatActivity() {
                     // If sign in fails, display a message to the user.
                     Log.w(ContentValues.TAG, "signInWithCredential:failure", task.exception)
                     updateUI(null)
+                }
                 }
             }
     }

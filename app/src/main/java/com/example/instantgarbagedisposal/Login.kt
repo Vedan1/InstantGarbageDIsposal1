@@ -51,7 +51,7 @@ class Login : AppCompatActivity() {
         setContentView(binding.root)
 
         auth = Firebase.auth
-        loginBtn = findViewById(R.id.LoginButton)
+//        loginBtn = findViewById(R.id.LoginButton)
 
         // Configure Google Sign In
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -73,11 +73,11 @@ class Login : AppCompatActivity() {
 //            finish()
 //        }
 
-        loginBtn.setOnClickListener {
-            email = findViewById(R.id.Email)
-            password = findViewById(R.id.Password)
-            signInUsingEmailAndPass(email.editText.toString(), password.editText.toString())
-        }
+//        loginBtn.setOnClickListener {
+//            email = findViewById(R.id.Email)
+//            password = findViewById(R.id.Password)
+//            signInUsingEmailAndPass(email.editText.toString(), password.editText.toString())
+//        }
     }
 
     private fun signInUsingEmailAndPass(email: String, password: String) {
@@ -139,25 +139,29 @@ class Login : AppCompatActivity() {
         val credential = GoogleAuthProvider.getCredential(idToken, null)
         auth.signInWithCredential(credential)
             .addOnCompleteListener(this) { task ->
+                auth = FirebaseAuth.getInstance()
 
+                val currentUser = auth.currentUser
 
+                if(currentUser!!.email!!.contains("@mes.ac.in") || currentUser.email!!.contains("@student.mes.ac.in") ) {
+                    if (auth.currentUser!!.email!!.contains("palashwalali25@gmail.com")) {
+//                        Log.d("ERror1", "Error in the login ")
+                        val intent: Intent = Intent(this, AdminActivity::class.java)
+                        startActivity(intent)
 
-                        if(auth.currentUser!!.email!!.contains("palashwalali25@gmail.com")){
-                                Log.d("ERror1", "Error in the login ")
-                                val intent: Intent = Intent(this,AdminActivity::class.java)
-                                startActivity(intent)
-
-                        }
-                        else if (task.isSuccessful) {
-                            // Sign in success, update UI with the signed-in user's information
-                            Log.d(ContentValues.TAG, "signInWithCredential:success")
-                            val user = auth.currentUser
-                            updateUI(user)
-                        }
-                        else {
-                            // If sign in fails, display a message to the user.
-                            Log.w(ContentValues.TAG, "signInWithCredential:failure", task.exception)
-                    updateUI(null)
+                    } else if (task.isSuccessful) {
+                        // Sign in success, update UI with the signed-in user's information
+                        Log.d(ContentValues.TAG, "signInWithCredential:success")
+                        val user = auth.currentUser
+                        updateUI(user)
+                    } else {
+                        // If sign in fails, display a message to the user.
+                        Log.w(ContentValues.TAG, "signInWithCredential:failure", task.exception)
+                        updateUI(null)
+                    }
+                }
+                else{
+                    Toast.makeText(this,"Sorry Not A MES User",Toast.LENGTH_SHORT).show()
                 }
             }
     }
