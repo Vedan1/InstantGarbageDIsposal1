@@ -82,21 +82,41 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
+
         <Button
+            android:id="@+id/acceptButton"
             android:layout_margin="5dp"
             android:backgroundTint="@color/green"
             android:layout_width="75dp"
-            android:textSize="10sp"
+            android:textSize="9sp"
             android:layout_height="match_parent"
             android:text="ACCEPT"/>
 
         <Button
+            android:id="@+id/rejectButton"
             android:layout_margin="5dp"
             android:backgroundTint="@color/red"
             android:layout_width="75dp"
-            android:textSize="10sp"
+            android:textSize="9sp"
             android:layout_height="match_parent"
             android:text="REJECT" />
+
+
+        <TextView
+            android:padding="25dp"
+            android:id="@+id/showTextView"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/green"
+            android:text="ACCEPTED"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            android:textStyle="bold"
+            android:textSize="18sp"/>
+
+
+
+
     </LinearLayout>
 
 

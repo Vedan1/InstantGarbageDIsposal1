@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.TextView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -26,6 +28,8 @@ class workerHome : Fragment() {
     private lateinit var root : FirebaseDatabase
     lateinit var adapter: MyAdapter
 
+
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -33,9 +37,13 @@ class workerHome : Fragment() {
         // Inflate the layout for this fragment
         v = inflater.inflate(R.layout.fragment_worker_home, container, false)
 
+
 //        recyclerView = v.findViewById(R.id.recyclerView)
 //        recyclerView.setHasFixedSize(true)
 //        recyclerView.layoutManager
+
+
+
 
 
 
@@ -59,7 +67,12 @@ class workerHome : Fragment() {
         })
 
 
+
+
     }
+
+
+
 
 
 }
