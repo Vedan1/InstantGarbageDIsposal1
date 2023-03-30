@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.example.instantgarbagedisposal.workerfragments.workerHome
+import com.example.instantgarbagedisposal.workerfragments.workerNotification
 import com.example.instantgarbagedisposal.workerfragments.workerProfile
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -21,6 +22,7 @@ class WorkerActivity : AppCompatActivity() {
         setContentView(R.layout.activity_worker)
 
         val homeFragment: Fragment = workerHome()
+        val notificationFragment: Fragment = workerNotification()
         val profileFragment: Fragment = workerProfile()
 
         makeCurrentFragment(homeFragment)
@@ -29,6 +31,7 @@ class WorkerActivity : AppCompatActivity() {
         bottom_nav.setOnNavigationItemSelectedListener {
             when (it.itemId) {
                 R.id.worker_home -> makeCurrentFragment(homeFragment)
+                R.id.worker_notification -> makeCurrentFragment(notificationFragment)
                 R.id.worker_profile -> makeCurrentFragment(profileFragment)
 
 
