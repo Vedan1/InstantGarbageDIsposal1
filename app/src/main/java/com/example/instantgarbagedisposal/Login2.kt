@@ -1,9 +1,9 @@
 package com.example.instantgarbagedisposal
 
-import android.content.ContentValues
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.content.ContentValues
+import android.content.Intent
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
@@ -11,7 +11,6 @@ import android.widget.TextView
 import android.widget.Toast
 import com.example.instantgarbagedisposal.databinding.ActivityLoginBinding
 import com.example.instantgarbagedisposal.databinding.ActivityMainBinding
-import com.example.instantgarbagedisposal.databinding.FragmentSettingsBinding
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -27,26 +26,27 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 
 
-class Login : AppCompatActivity() {
+class Login2 : AppCompatActivity() {
     private lateinit var googleSignInClient: GoogleSignInClient
     private lateinit var auth: FirebaseAuth
+
+    private lateinit var binding: ActivityLoginBinding
 
     private lateinit var email : TextInputLayout
     private lateinit var password: TextInputLayout
     private lateinit var loginBtn: Button
-    private lateinit var binding : ActivityLoginBinding
-    //private lateinit var mAuth: FirebaseAuth
-    private lateinit var dummyButton: Button
 
-//    private var currentUser = auth.currentUser
+    private lateinit var dummyButton: Button
 
     private fun signIn() {
         val signInIntent = googleSignInClient.signInIntent
-        startActivityForResult(signInIntent, RC_SIGN_IN)
+        startActivityForResult(signInIntent, Login.RC_SIGN_IN)
     }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_login2)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -66,12 +66,12 @@ class Login : AppCompatActivity() {
             signIn()
         }
 
-//        dummyButton = findViewById(R.id.dummyButton)
-//        dummyButton.setOnClickListener {
-//            val intent: Intent = Intent(this,WorkerActivity::class.java)
-//            startActivity(intent)
-//            finish()
-//        }
+    //    dummyButton = findViewById(R.id.dummyButton)
+       /* dummyButton.setOnClickListener {
+            val intent: Intent = Intent(this,WorkerActivity::class.java)
+            startActivity(intent)
+            finish()
+        }*/
 
         loginBtn.setOnClickListener {
             email = findViewById(R.id.Email)
@@ -142,21 +142,21 @@ class Login : AppCompatActivity() {
 
 
 
-                        if(auth.currentUser!!.email!!.contains("palashwalali25@gmail.com")){
-                                Log.d("ERror1", "Error in the login ")
-                                val intent: Intent = Intent(this,AdminActivity::class.java)
-                                startActivity(intent)
+                if(auth.currentUser!!.email!!.contains("palashwalali25@gmail.com")){
+                    Log.d("ERror1", "Error in the login ")
+                    val intent: Intent = Intent(this,AdminActivity::class.java)
+                    startActivity(intent)
 
-                        }
-                        else if (task.isSuccessful) {
-                            // Sign in success, update UI with the signed-in user's information
-                            Log.d(ContentValues.TAG, "signInWithCredential:success")
-                            val user = auth.currentUser
-                            updateUI(user)
-                        }
-                        else {
-                            // If sign in fails, display a message to the user.
-                            Log.w(ContentValues.TAG, "signInWithCredential:failure", task.exception)
+                }
+                else if (task.isSuccessful) {
+                    // Sign in success, update UI with the signed-in user's information
+                    Log.d(ContentValues.TAG, "signInWithCredential:success")
+                    val user = auth.currentUser
+                    updateUI(user)
+                }
+                else {
+                    // If sign in fails, display a message to the user.
+                    Log.w(ContentValues.TAG, "signInWithCredential:failure", task.exception)
                     updateUI(null)
                 }
             }
@@ -167,7 +167,7 @@ class Login : AppCompatActivity() {
         FirebaseDatabase.getInstance()
 
         if (user != null) {
-            val intent = Intent(applicationContext, WorkerActivity::class.java)
+            val intent = Intent(applicationContext, AdminActivity::class.java)
             intent.putExtra(EXTRA_NAME, user.displayName)
             startActivity(intent)
             finish()
