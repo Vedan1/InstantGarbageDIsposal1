@@ -18,6 +18,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.InstantGarbageDIsposal">
         <activity
+            android:name=".msgadmin"
+            android:exported="false" />
+        <activity
             android:name=".Login2"
             android:exported="false" />
         <activity

@@ -19,7 +19,7 @@
         app:layout_constraintHorizontal_bias="0.471"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.218" />
+        app:layout_constraintVertical_bias="0.148" />
 
     <Button
         android:id="@+id/button"
@@ -58,12 +58,13 @@
         android:id="@+id/workerbtn"
         android:layout_width="298dp"
         android:layout_height="51dp"
-        android:layout_marginTop="108dp"
+        android:layout_marginTop="68dp"
         android:text="Login as Worker"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonend" />
+
     <Button
         android:id="@+id/supervisorbtn"
         android:layout_width="298dp"
