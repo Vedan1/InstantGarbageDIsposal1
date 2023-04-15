@@ -11,7 +11,6 @@
         android:layout_width="316dp"
         android:layout_height="54dp"
         android:layout_marginTop="44dp"
-        android:fontFamily="@font/montserrat"
 
         android:text="Please Enter Your Notice"
         android:textSize="18sp"
@@ -44,10 +43,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.097"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputEditText" />
+        app:layout_constraintTop_toBottomOf="@+id/noticeInputEditText" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/textInputEditText"
+        android:id="@+id/noticeInputEditText"
         android:layout_width="318dp"
         android:layout_height="167dp"
         android:layout_marginTop="36dp"

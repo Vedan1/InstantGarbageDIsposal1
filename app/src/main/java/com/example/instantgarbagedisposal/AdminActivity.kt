@@ -17,6 +17,7 @@ class AdminActivity : AppCompatActivity() {
         btn1.setOnClickListener(){
             val i = Intent(this,msgadmin::class.java)
             startActivity(i)
+            finish()
         }
 
 
