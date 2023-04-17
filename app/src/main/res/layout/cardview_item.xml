@@ -70,10 +70,19 @@
         <ImageView
             android:id="@+id/cdImageView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="190dp"
             android:layout_gravity="center"
             android:padding="10dp"
             tools:srcCompat="@tools:sample/avatars" />
+
+        <Button
+            android:id="@+id/showLocationBtn"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Get Location"
+            android:textSize="9sp"/>
     </LinearLayout>
 
     <LinearLayout

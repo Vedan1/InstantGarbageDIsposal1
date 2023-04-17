@@ -1,17 +1,21 @@
 package com.example.instantgarbagedisposal.Adapter
 
+import android.content.Intent
 import android.graphics.BitmapFactory
+import android.graphics.Color
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.example.instantgarbagedisposal.R
 import com.example.instantgarbagedisposal.Models.RetrieveData
+import com.example.instantgarbagedisposal.R
 import com.google.firebase.crashlytics.buildtools.reloc.org.apache.commons.codec.binary.Base64
-import android.graphics.Color
+
 
 class MyAdapter() : RecyclerView.Adapter<MyAdapter.MyViewHolder>(){
 
@@ -35,6 +39,13 @@ class MyAdapter() : RecyclerView.Adapter<MyAdapter.MyViewHolder>(){
         val imageBytes = Base64.decodeBase64(currentItem.image)
         val bitmap = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size)
 
+        val coordinatesString = currentItem.coordinates
+
+        val latlng = coordinatesString?.split(" ")
+        val lat = latlng?.get(0)
+        val long = latlng?.get(1)
+
+
         holder.location.text = currentItem.location
         holder.garbageImage.setImageBitmap(bitmap)
         holder.garbageType.text = currentItem.garbage_type
@@ -56,6 +67,18 @@ class MyAdapter() : RecyclerView.Adapter<MyAdapter.MyViewHolder>(){
             acceptButton.visibility = View.GONE
             rejectButton.visibility = View.GONE
         }
+
+        holder.showLocation.setOnClickListener {
+            val strUri = "http://maps.google.com/maps?q=loc:$lat,$long"
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(strUri))
+
+            intent.setClassName(
+                "com.google.android.apps.maps",
+                "com.google.android.maps.MapsActivity"
+            )
+
+            it.context.startActivity(intent)
+        }
     }
 
     fun updateUserList(userList: List<RetrieveData>){
@@ -70,6 +93,7 @@ class MyAdapter() : RecyclerView.Adapter<MyAdapter.MyViewHolder>(){
         val location : TextView = itemView.findViewById(R.id.cdLocation)
         val garbageImage: ImageView = itemView.findViewById(R.id.cdImageView)
         val garbageType: TextView = itemView.findViewById(R.id.cdGarbageType)
+        val showLocation: Button = itemView.findViewById(R.id.showLocationBtn)
 
     }
 

@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -29,6 +30,7 @@ class workerNotification : Fragment() {
     lateinit var NoticeAdapter: NoticeAdapter
 //    val notices = mutableListOf<orders>()
     val databaseReference = FirebaseDatabase.getInstance().getReference("orders")
+    private lateinit var noNoticeTextView : TextView
 
 
     override fun onCreateView(
@@ -46,6 +48,7 @@ class workerNotification : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         ntRecyclerView = view.findViewById(R.id.ntRecyclerView)
+        noNoticeTextView = view.findViewById(R.id.noNoticeTextView)
         NoticeAdapter = NoticeAdapter()
 
         ntRecyclerView.apply {
@@ -73,6 +76,11 @@ class workerNotification : Fragment() {
                         val order = Orders(message, timestamp, expiryTime)
                         noticeList.add(order)
                     }
+
+                }
+                if(noticeList.isEmpty()){
+                    ntRecyclerView.visibility = View.GONE
+                    noNoticeTextView.visibility = View.VISIBLE
 
                 }
 
