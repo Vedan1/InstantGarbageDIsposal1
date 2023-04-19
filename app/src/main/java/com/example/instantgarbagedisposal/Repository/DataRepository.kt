@@ -28,7 +28,9 @@ class DataRepository {
               try {
                   val _currentList : List<RetrieveData> = snapshot.children.map { dataSnapshot ->
 
-                      dataSnapshot.getValue(RetrieveData::class.java)!!
+                     val retrieveData  =  dataSnapshot.getValue(RetrieveData::class.java)!!
+                      retrieveData.key = dataSnapshot.key
+                      retrieveData
                   }
 
                   currentList.postValue(_currentList)

@@ -57,7 +57,7 @@ class workerHome : Fragment() {
         recyclerView = view.findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(context)
         recyclerView.setHasFixedSize(true)
-        adapter = MyAdapter()
+        adapter = MyAdapter(requireContext())
         recyclerView.adapter = adapter
 
         viewModel = ViewModelProvider(this).get(DataViewModel::class.java)
