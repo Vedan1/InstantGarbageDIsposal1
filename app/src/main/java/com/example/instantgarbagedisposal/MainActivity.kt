@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         val postissueFragment = PostIssue_Fragment()
         val settingsFragment = SettingsFragment()
 
-        makeCurrentFragment(homeFragment)
+        makeCurrentFragment(postissueFragment)
 
 //        issueButton.setOnClickListener {
 //            val intent: Intent = Intent(

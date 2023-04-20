@@ -4,39 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    tools:context=".fragments.HomeFragment">
+    tools:context=".workerfragments.workerNotification">
 
-    <Button
-        android:id="@+id/ongoing"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/userRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="ONGOING EVENTS"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        tools:listitem="@layout/cardview_user" />
 
-    <Button
-        android:id="@+id/upcoming"
+
+    <TextView
+        android:id="@+id/noCompletedWorkTextView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="UPCOMING EVENTS"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ongoing" />
-
-    <Button
-        android:id="@+id/creationCleaning"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="CREATE A CLEANING DRIVE"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/upcoming" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        android:visibility="gone"
+        android:textStyle="italic"
+        android:textColor="@color/purple_700"
+        android:gravity="center"
+        android:textSize="35sp"
+        android:text="No work has beencompleted yet !"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
